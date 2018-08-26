@@ -8,21 +8,6 @@ let fakeServerData = {
       {
         name: "My favourites",
         songs: [{ name: "Song 1" }, { name: "Song 2" }, { name: "Song 3" }]
-      },
-
-      {
-        name: "Playlist ",
-        songs: [{ name: "Song 1" }, { name: "Song 2" }, { name: "Song 3" }]
-      },
-
-      {
-        name: " Another playlist",
-        songs: [{ name: "Song 1" }, { name: "Song 2" }, { name: "Song 3" }]
-      },
-
-      {
-        name: "last",
-        songs: [{ name: "Song 1" }, { name: "Song 2" }, { name: "Song 3" }]
       }
     ]
   }
@@ -60,8 +45,8 @@ class Playlist extends Component {
     let playlist = this.props.playlist;
     return (
       <div className="playlist">
-        <img />
         <h3>{playlist.name}</h3>
+        <img className="playlist-img" src={playlist.imageUrl} />
         <ul>
           {playlist.songs.map(song => (
             <li className="list-item">{song.name}</li>
@@ -78,24 +63,56 @@ class App extends Component {
     filterString: ""
   };
   componentDidMount() {
-    this.setState({ serverData: fakeServerData });
+    // this.setState({ serverData: fakeServerData });
+    let accessToken =
+      "BQDF9ahrofYSFWD0H9CbQXOW2Ue32MABvjOiIk3BInNsDl9QN35mZleS2okR4WUVnGeQ_aDf-8J8WpEro9bB9O1G3xrAc9Hkegix8nIreZ3O1iNDMGQNuyD9qRAaxKr2mQVimmhZlqtOV3uyeR-ftOlQpj2DnIxeuEHfGWyranXRJVJYuQ";
+    fetch("https://api.spotify.com/v1/me", {
+      headers: {
+        Authorization: "Bearer " + accessToken
+      }
+    })
+      .then(response => response.json())
+      .then(data => this.setState({ user: { name: data.display_name } }));
+
+    fetch("https://api.spotify.com/v1/me/playlists", {
+      headers: {
+        Authorization: "Bearer " + accessToken
+      }
+    })
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          playlists: data.items.map(item => {
+            console.log(data.items);
+
+            return {
+              name: item.name,
+              imageUrl: item.images[0].url,
+              songs: []
+            };
+          })
+        })
+      );
   }
   render() {
+    let playlistToRender =
+      this.state.user && this.state.playlists
+        ? this.state.playlists.filter(playlist =>
+            playlist.name
+              .toLowerCase()
+              .includes(this.state.filterString.toLowerCase())
+          )
+        : [];
     return (
       <div className="App">
-        {this.state.serverData.user && (
+        {this.state.user ? (
           <div>
             <h1>
-              {this.state.serverData.user.name}
+              {this.state.user.name}
               's playlists
             </h1>
 
-            <div>
-              <PlaylistCounter
-                playlists={this.state.serverData.user.playlists}
-              />
-              {/* <Aggregate /> */}
-            </div>
+            <PlaylistCounter playlists={playlistToRender} />
 
             <Filter
               onTextChange={text => {
@@ -103,17 +120,13 @@ class App extends Component {
               }}
             />
             <div className="wrap">
-              {this.state.serverData.user.playlists
-                .filter(playlist =>
-                  playlist.name
-                    .toLowerCase()
-                    .includes(this.state.filterString.toLowerCase())
-                )
-                .map(playlist => (
-                  <Playlist playlist={playlist} />
-                ))}
+              {playlistToRender.map(playlist => (
+                <Playlist playlist={playlist} />
+              ))}
             </div>
           </div>
+        ) : (
+          <p />
         )}
       </div>
     );
