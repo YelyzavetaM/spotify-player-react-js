@@ -84,18 +84,14 @@ h1 {
 
 .input-part {
   width: 30%;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-top: 84px; */
   background-color: rgba(235, 98, 235, 0.32);
 }
 
 .gallery-part {
   width: 70%;
-  /* margin-top: 50px; */
-  /* background: linear-gradient(rgba(67, 67, 190, 0.37)); */
 }
 
 .input-group {

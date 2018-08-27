@@ -1,3 +1,6 @@
+//To be able to log in to the Spotify account
+//and rund this app correctly follow  https://github.com/mpj/oauth-bridge-template
+
 import React, { Component } from "react";
 import "./App.css";
 import Gallery from "./components/Gallery/Gallery";
@@ -47,126 +50,6 @@ class Playlist extends Component {
   }
 }
 
-// class App extends Component {
-//   state = {
-//     filterString: "",
-//     query: "",
-//     tracks: [],
-//     artist: null
-//   };
-
-//   componentDidMount() {
-//     let accessToken =
-//       "BQA-MRinXklH2kZpaDCsMwGiU_3ZEoJWWyTJgTll6w8G4g_GR0Hh4YaIJsTXBEsQWY0m2Gfq4We8tKj1vKbIimY_f91y40oZEdYpPkQh4wKu16-O9bc59JI7pxXlrSSO4XN8dQiI3SuW3BHxZoN4nyxyI4nl3acStDuCoF8baHp6OJZHMA";
-
-//     fetch("https://api.spotify.com/v1/me", {
-//       headers: {
-//         Authorization: "Bearer " + accessToken
-//       }
-//     })
-//       .then(response => response.json())
-//       .then(data => this.setState({ user: { name: data.display_name } }));
-
-//     fetch("https://api.spotify.com/v1/me/playlists", {
-//       headers: {
-//         Authorization: "Bearer " + accessToken
-//       }
-//     })
-//       .then(response => response.json())
-//       .then(data =>
-//         this.setState({
-//           playlists: data.items.map(item => {
-//             return {
-//               name: item.name,
-//               imageUrl: item.images[0].url,
-//               songs: []
-//             };
-//           })
-//         })
-//       );
-
-//     const BASE_URL = "https://api.spotify.com/v1/search?";
-//     let FETCH_URL = BASE_URL + "q=" + this.state.query + "&type=artist&limit=1";
-//     const ALBUM_URL = "https://api.spotify.com/v1/artists/";
-//     fetch(FETCH_URL, {
-//       headers: {
-//         Authorization: "Bearer " + accessToken
-//       }
-//     })
-//       .then(response => response.json())
-//       .then(json => {
-//         const artist = json.artists.items[0];
-//         this.setState({ artist });
-
-//         FETCH_URL = `${ALBUM_URL}${artist.id}/related-artists?country=US&`;
-//         fetch(FETCH_URL, {
-//           headers: {
-//             Authorization: "Bearer " + accessToken
-//           }
-//         })
-//           .then(response => response.json())
-//           .then(json => {
-//             const { tracks } = json;
-//             this.setState({ tracks });
-//             console.log(tracks);
-//           });
-//       });
-//   }
-
-//   // search() {
-//   //   const BASE_URL = "https://api.spotify.com/v1/search?";
-//   //   let FETCH_URL = BASE_URL + "q=" + this.state.query + "&type=artist&limit=1";
-//   //   const ALBUM_URL = "https://api.spotify.com/v1/artists/";
-
-//   //   let accessToken =
-//   //     "BQA-MRinXklH2kZpaDCsMwGiU_3ZEoJWWyTJgTll6w8G4g_GR0Hh4YaIJsTXBEsQWY0m2Gfq4We8tKj1vKbIimY_f91y40oZEdYpPkQh4wKu16-O9bc59JI7pxXlrSSO4XN8dQiI3SuW3BHxZoN4nyxyI4nl3acStDuCoF8baHp6OJZHMA";
-
-//   //   let myOptions = {
-//   //     method: "GET",
-//   //     headers: {
-//   //       Authorization: "Bearer " + accessToken
-//   //     },
-//   //     mode: "cors",
-//   //     cache: "default"
-//   //   };
-//   //   fetch(FETCH_URL, myOptions)
-//   //     .then(response => response.json())
-//   //     .then(json => {
-//   //       const artist = json.artists.items[0];
-//   //       this.setState({ artist });
-
-//   //       FETCH_URL = `${ALBUM_URL}${artist.id}/related-artists?country=US&`;
-//   //       fetch(FETCH_URL, myOptions)
-//   //         .then(response => response.json())
-//   //         .then(json => {
-//   //           const { tracks } = json;
-//   //           this.setState({ tracks });
-//   //           console.log(tracks);
-//   //         });
-//   //     });
-//   // }
-
-//   render() {
-//     let playlistToRender =
-//       this.state.user && this.state.playlists
-//         ? this.state.playlists.filter(playlist =>
-//             playlist.name
-//               .toLowerCase()
-//               .includes(this.state.filterString.toLowerCase())
-//           )
-//         : [];
-//     return (
-//       <div className="App">
-//         <div className="playlists-part">
-//           {this.state.user ? (
-//             <div>
-//               <h1>
-//                 {this.state.user.name}
-//                 's playlists
-//               </h1>
-
-//               <PlaylistCounter playlists={playlistToRender} />
-
 //               <Filter
 //                 onTextChange={text => {
 //                   this.setState({ filterString: text });
@@ -183,35 +66,6 @@ class Playlist extends Component {
 //           )}
 //         </div>
 
-//         <div className="gallery-part">
-//           <form>
-//             <input
-//               type="text"
-//               value={this.state.query}
-//               onChange={event => {
-//                 this.setState({ query: event.target.value });
-//               }}
-//               onKeyPress={event => {
-//                 if (event.key === "Enter") {
-//                   this.search();
-//                 }
-//               }}
-//             />
-//             <button>search</button>
-//           </form>
-//           {/* <Search
-//             value={this.state.query}
-//             onChange={event => {
-//               this.setState({ query: event.target.value });
-//             }}
-//           /> */}
-//           <Gallery />
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
 class App extends Component {
   state = {
     query: "",
@@ -221,7 +75,7 @@ class App extends Component {
 
   componentDidMount() {
     let accessToken =
-      "BQDemMWtT7PGgNJ-kdfaj8QdE-yECLfai160R0-gxRtdxCWfcyDSdVUfBE_TjG6MQy0z4wY3eYrZll-Bs4kKsxp8Cjg6ts0Q4CnORN5KOD3dxDsEE4_rRqXRIhFXbadTdpfy5anV7TuiRljsUC_HJ6hTD-2tmpAOjZmfHiJAg77btHOcVg";
+      "BQCQ6ouETfG8IL2t6shbsJTZc8iTNvHiY9RO5fqtM5PuxIkWere_Pwe6QsGXYKiiDgBMEfqu2WkF3ZfuCivnhGFtCQqI4qRKpeHAgGUB8vFUSg5YaUvG_H-mhsUSsnKbdob1Md2-GYAiNuAc_0yVOwpkU5Ew-Z5pzH3sQYnUfeEEKu0WGQ";
 
     fetch("https://api.spotify.com/v1/me", {
       headers: {
@@ -257,7 +111,7 @@ class App extends Component {
     const ALBUM_URL = "https://api.spotify.com/v1/artists/";
 
     let accessToken =
-      "BQDemMWtT7PGgNJ-kdfaj8QdE-yECLfai160R0-gxRtdxCWfcyDSdVUfBE_TjG6MQy0z4wY3eYrZll-Bs4kKsxp8Cjg6ts0Q4CnORN5KOD3dxDsEE4_rRqXRIhFXbadTdpfy5anV7TuiRljsUC_HJ6hTD-2tmpAOjZmfHiJAg77btHOcVg";
+      "BQCQ6ouETfG8IL2t6shbsJTZc8iTNvHiY9RO5fqtM5PuxIkWere_Pwe6QsGXYKiiDgBMEfqu2WkF3ZfuCivnhGFtCQqI4qRKpeHAgGUB8vFUSg5YaUvG_H-mhsUSsnKbdob1Md2-GYAiNuAc_0yVOwpkU5Ew-Z5pzH3sQYnUfeEEKu0WGQ";
 
     let myOptions = {
       method: "GET",
@@ -268,7 +122,6 @@ class App extends Component {
       cache: "default"
     };
 
-    // FETCH!!!!
     fetch(FETCH_URL, myOptions)
       .then(response => response.json())
       .then(json => {
