@@ -1,13 +1,41 @@
-html,
 body {
-  background: #000;
+  box-sizing: border-box;
+  background: rgba(2, 2, 2, 0.89);
+  font-family: "Raleway", sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+html {
+  height: 100vh;
 }
 
 .App {
   color: #fff;
-  text-align: center;
+  width: 100%;
 }
 
+.main-content-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  height: 20px;
+  font-size: 40px;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.sub-title {
+  font-size: 30px;
+  padding: 10px;
+}
 .wrap {
   display: flex;
   width: 100%;
@@ -19,22 +47,106 @@ ul {
   padding: 0;
 }
 
+h1 {
+  margin: 20px 0 0 0;
+  font-size: 25px;
+}
+
+.playlist-wrap {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
 .playlist {
   display: flex;
   flex-direction: column;
-  /* margin: 20px; */
+  margin: 20px;
   padding: 10px;
-  width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 15px;
 }
 
-.list-item {
-  list-style: none;
-  color: #fff;
+.playlist-name {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .playlist-img {
-  width: 200px;
+  width: 150px;
+  height: 150px;
   display: block;
+}
+
+.input-part {
+  width: 30%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 84px; */
+  background-color: rgba(235, 98, 235, 0.32);
+}
+
+.gallery-part {
+  width: 70%;
+  /* margin-top: 50px; */
+  /* background: linear-gradient(rgba(67, 67, 190, 0.37)); */
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.input {
+  /* margin: 20px 5px 5px 5px; */
+  width: 500px;
+  height: 30px;
+  border-radius: 6px;
+  color: #6b5b95;
+  font-style: italic;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.input::placeholder {
+  color: #6b5b95;
+  font-weight: 300;
+  font-style: italic;
+  /* padding: 10px; */
+}
+
+.btn {
+  border: none;
+  color: #6b5b95;
+  background: none;
+}
+
+.btn-search {
+  margin-left: 5px;
+  position: absolute;
+  top: 20%;
+  right: 22%;
+  font-size: 20px;
+  outline: none;
+}
+
+.btn-search:hover {
+  background-color: transparent;
+  transform: scale(1.2, 1.2);
+  color: #6b5b95;
+  border: none;
+}
+
+.aggregate {
+  color: #fff;
+  padding: 0px;
 }
