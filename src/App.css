@@ -32,9 +32,21 @@ h2 {
   text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 550px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+
 .sub-title {
   font-size: 30px;
   padding: 10px;
+}
+
+@media screen and (max-width: 550px) {
+  .sub-title {
+    font-size: 25px;
+  }
 }
 .wrap {
   display: flex;
@@ -52,12 +64,26 @@ h1 {
   font-size: 25px;
 }
 
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 16px;
+  }
+}
+
 .playlist-wrap {
   display: flex;
   /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 20px;
+  padding: 20px 0 55px 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .playlist-wrap {
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0;
+  }
 }
 
 .playlist {
@@ -82,12 +108,19 @@ h1 {
   display: block;
 }
 
+@media screen and (max-width: 550px) {
+  .playlist-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 .input-part {
   width: 30%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(235, 98, 235, 0.32);
+  background-color: rgba(218, 79, 218, 0.491);
 }
 
 .gallery-part {
@@ -113,6 +146,22 @@ h1 {
   font-size: 16px;
 }
 
+@media screen and (max-width: 800px) {
+  .input {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .input {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .input {
+    width: 200px;
+  }
+}
 .input::placeholder {
   color: #6b5b95;
   font-weight: 300;
@@ -135,6 +184,11 @@ h1 {
   outline: none;
 }
 
+@media screen and (max-width: 1200px) {
+  .btn-search {
+    display: none;
+  }
+}
 .btn-search:hover {
   background-color: transparent;
   transform: scale(1.2, 1.2);
