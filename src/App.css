@@ -189,6 +189,19 @@ h1 {
     display: none;
   }
 }
+
+@media screen and (max-width: 1920px) {
+  .btn-search {
+    right: 31%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .btn-search {
+    right: 22%;
+  }
+}
+
 .btn-search:hover {
   background-color: transparent;
   transform: scale(1.2, 1.2);
