@@ -18,8 +18,14 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1920px) {
+  .gallery {
+    margin: 20px;
+  }
+}
+
 .track {
-  margin: 10px;
+  margin: 15px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */

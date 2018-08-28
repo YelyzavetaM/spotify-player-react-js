@@ -75,7 +75,7 @@ class App extends Component {
 
   componentDidMount() {
     let accessToken =
-      "BQD6v50OlnUykroTI3nMmARAQhkVmXmuAK7ZOjKgkPcQ9pCBySEc1iwqduWNRhVCrXlFdp3IbcBUJ_-buaXk1mxfC4J_Yg__V5rVJ-zqGLNXiL2wztFkJZhEXYgdhAwuAt5UW-_rZLkYl0J1vAWpsZSKySCyr_EBVarudyOXeZ8toS1QSQ";
+      "BQBgjpvNhMDsxqec9_Npaju49ofshXPVaxWNGT0li4Np48JTXC-vSypHL8S1ZNVXeFoUrM5-v8MjLBEqs6eWRERe2pCft0eIHq01bpDxtHJiGva07-ulwqGx8O6dcsy8ze2X28irUaWCwRwUKlA3IdvtXtYLsss7Z7x3DoTIg6oXtziDYg";
 
     fetch("https://api.spotify.com/v1/me", {
       headers: {
@@ -111,7 +111,7 @@ class App extends Component {
     const ALBUM_URL = "https://api.spotify.com/v1/artists/";
 
     let accessToken =
-      "BQD6v50OlnUykroTI3nMmARAQhkVmXmuAK7ZOjKgkPcQ9pCBySEc1iwqduWNRhVCrXlFdp3IbcBUJ_-buaXk1mxfC4J_Yg__V5rVJ-zqGLNXiL2wztFkJZhEXYgdhAwuAt5UW-_rZLkYl0J1vAWpsZSKySCyr_EBVarudyOXeZ8toS1QSQ";
+      "BQBgjpvNhMDsxqec9_Npaju49ofshXPVaxWNGT0li4Np48JTXC-vSypHL8S1ZNVXeFoUrM5-v8MjLBEqs6eWRERe2pCft0eIHq01bpDxtHJiGva07-ulwqGx8O6dcsy8ze2X28irUaWCwRwUKlA3IdvtXtYLsss7Z7x3DoTIg6oXtziDYg";
 
     let myOptions = {
       method: "GET",
