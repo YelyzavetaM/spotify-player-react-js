@@ -6,7 +6,7 @@ class ArtistProfile extends Component {
   render() {
     let artist = { name: "", followers: { total: "" } };
     artist = this.props.artist !== null ? this.props.artist : artist;
-    console.log(artist);
+    // console.log(artist);
 
     return (
       <div className="artist-profile">

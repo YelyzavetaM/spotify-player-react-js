@@ -53,9 +53,9 @@ class Gallery extends Component {
               <span className="track-play">
                 <span className="track-play-inner">
                   {this.state.playingUrl === track.preview_url ? (
-                    <i class="fas fa-pause" />
+                    <i className="fas fa-pause" />
                   ) : (
-                    <i class="fas fa-play" />
+                    <i className="fas fa-play" />
                   )}
                 </span>
               </span>

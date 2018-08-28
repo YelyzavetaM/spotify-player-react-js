@@ -75,7 +75,7 @@ class App extends Component {
 
   componentDidMount() {
     let accessToken =
-      "BQBgjpvNhMDsxqec9_Npaju49ofshXPVaxWNGT0li4Np48JTXC-vSypHL8S1ZNVXeFoUrM5-v8MjLBEqs6eWRERe2pCft0eIHq01bpDxtHJiGva07-ulwqGx8O6dcsy8ze2X28irUaWCwRwUKlA3IdvtXtYLsss7Z7x3DoTIg6oXtziDYg";
+      "BQD6XcwMY9m34jqI4zCo8zxQ-gqOuO9i3PBJKtQcmBie0XZ7P_2BR8N3UT1nWmiI_z_NUtPEcS-vZQ9YCWt5EYu42hVvIG4Qo6FA-hnQcpR8PoTC2RYE0dra6ooREvDhO3elUOdpDYRijJRmhia3CVdxfCTw6SbQuVxpM154YqRhSrzgfw";
 
     fetch("https://api.spotify.com/v1/me", {
       headers: {
@@ -111,7 +111,7 @@ class App extends Component {
     const ALBUM_URL = "https://api.spotify.com/v1/artists/";
 
     let accessToken =
-      "BQBgjpvNhMDsxqec9_Npaju49ofshXPVaxWNGT0li4Np48JTXC-vSypHL8S1ZNVXeFoUrM5-v8MjLBEqs6eWRERe2pCft0eIHq01bpDxtHJiGva07-ulwqGx8O6dcsy8ze2X28irUaWCwRwUKlA3IdvtXtYLsss7Z7x3DoTIg6oXtziDYg";
+      "BQD6XcwMY9m34jqI4zCo8zxQ-gqOuO9i3PBJKtQcmBie0XZ7P_2BR8N3UT1nWmiI_z_NUtPEcS-vZQ9YCWt5EYu42hVvIG4Qo6FA-hnQcpR8PoTC2RYE0dra6ooREvDhO3elUOdpDYRijJRmhia3CVdxfCTw6SbQuVxpM154YqRhSrzgfw";
 
     let myOptions = {
       method: "GET",
@@ -148,7 +148,7 @@ class App extends Component {
       <div className="App">
         {/* {this.state.user && this.state.playlists} */}
         <div className="main-content-wrap">
-          <div className="input-part">
+          <div className="playlist-part">
             <h1>
               {/* {this.state.user.name} */}
               You have:
