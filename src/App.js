@@ -1,22 +1,12 @@
-//To be able to log in to the Spotify account
-//and rund this app correctly follow  https://github.com/mpj/oauth-bridge-template
+//To be able to log in to your Spotify account and
+// run this app correctly follow  https://github.com/mpj/oauth-bridge-template to get an access token
 
 import React, { Component } from "react";
 import "./App.css";
 import Gallery from "./components/Gallery/Gallery";
 import ArtistProfile from "./components/ArtistProfile/ArtistProfile";
-
-class PlaylistCounter extends Component {
-  render() {
-    return (
-      <div className="aggregate">
-        <h2 className="sub-title">
-          {this.props.playlists && this.props.playlists.length} playlists
-        </h2>
-      </div>
-    );
-  }
-}
+import PlaylistCounter from "./components/PlaylistCounter/PlaylistCounter";
+import Playlist from "./components/Playlist/Playlist";
 
 // class Filter extends Component {
 //   render() {
@@ -32,23 +22,6 @@ class PlaylistCounter extends Component {
 //     );
 //   }
 // }
-
-class Playlist extends Component {
-  render() {
-    let playlist = this.props.playlist;
-    return (
-      <div className="playlist">
-        <img className="playlist-img" src={playlist.imageUrl} />
-        <h3 className="playlist-name">{playlist.name}</h3>
-        {/* <ul>
-          {playlist.songs.map(song => (
-            <li className="list-item">{song.name}</li>
-          ))}
-        </ul> */}
-      </div>
-    );
-  }
-}
 
 //               <Filter
 //                 onTextChange={text => {
@@ -75,7 +48,7 @@ class App extends Component {
 
   componentDidMount() {
     let accessToken =
-      "BQD6XcwMY9m34jqI4zCo8zxQ-gqOuO9i3PBJKtQcmBie0XZ7P_2BR8N3UT1nWmiI_z_NUtPEcS-vZQ9YCWt5EYu42hVvIG4Qo6FA-hnQcpR8PoTC2RYE0dra6ooREvDhO3elUOdpDYRijJRmhia3CVdxfCTw6SbQuVxpM154YqRhSrzgfw";
+      "BQDo5Y4HyVlSYztquYPrTRuBvMeaYzcsCLNTjZLe1yIUbdsyVnDSA-8sJqJx1Gv5-hleqm3UcBC4CTzFtbU_E6Xb5zs2ev3gRvRPr9jzs5qCXVPcIOozACAq7bYCSOXljgULG8cZQwAifla_o7rRvPSCD2OT4lPLmBhn3EivVJ2DZphSog";
 
     fetch("https://api.spotify.com/v1/me", {
       headers: {
@@ -111,7 +84,7 @@ class App extends Component {
     const ALBUM_URL = "https://api.spotify.com/v1/artists/";
 
     let accessToken =
-      "BQD6XcwMY9m34jqI4zCo8zxQ-gqOuO9i3PBJKtQcmBie0XZ7P_2BR8N3UT1nWmiI_z_NUtPEcS-vZQ9YCWt5EYu42hVvIG4Qo6FA-hnQcpR8PoTC2RYE0dra6ooREvDhO3elUOdpDYRijJRmhia3CVdxfCTw6SbQuVxpM154YqRhSrzgfw";
+      "BQDo5Y4HyVlSYztquYPrTRuBvMeaYzcsCLNTjZLe1yIUbdsyVnDSA-8sJqJx1Gv5-hleqm3UcBC4CTzFtbU_E6Xb5zs2ev3gRvRPr9jzs5qCXVPcIOozACAq7bYCSOXljgULG8cZQwAifla_o7rRvPSCD2OT4lPLmBhn3EivVJ2DZphSog";
 
     let myOptions = {
       method: "GET",

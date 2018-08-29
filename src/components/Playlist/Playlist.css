@@ -1,0 +1,28 @@
+.playlist {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 15px;
+}
+
+.playlist-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.playlist-img {
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+
+@media screen and (max-width: 550px) {
+  .playlist-img {
+    width: 100px;
+    height: 100px;
+  }
+}

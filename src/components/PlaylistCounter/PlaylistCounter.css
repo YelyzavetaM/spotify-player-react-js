@@ -1,0 +1,15 @@
+.aggregate {
+  color: #fff;
+  padding: 0px;
+}
+
+.sub-title {
+  font-size: 30px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 550px) {
+  .sub-title {
+    font-size: 25px;
+  }
+}
